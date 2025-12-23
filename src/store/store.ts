@@ -1,9 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import servicesReducer from './reducers/ServicesSlice';
+import headerReducer from './reducers/HeaderSlice';
+import cartReducer from './reducers/CartItemSlice';
 
 
 const rootReducer = combineReducers({
   servicesReducer,
+  headerReducer,
+  cartReducer
 });
 
 export const setupStore = () => {

@@ -1,30 +1,70 @@
-import { IServices } from '../../models/IServices';
+import { IService } from '../../models/IServices';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ServicesState {
-  services: IServices[];
+  services: IService[];
   isLoading: boolean;
   error: string;
 }
 
 const initialState: ServicesState = {
-  services: [
-    {
-      id: 1,
-      name: 'Service1',
-      price: 999,
-      description: 'Description1',
-    }, {
-      id: 2,
-      name: 'Service2',
-      price: 1999,
-      description: 'Description2',
-    }, {
-      id: 3,
-      name: 'Service3',
-      price: 2999,
-      description: 'Description3',
-    }],
+  services:
+    [
+      {
+        id: 1,
+        name: 'Премиум-питание',
+        price: 2500,
+        description: 'Гастрономическое меню от шеф-повара с выбором из трех горячих блюд, закусками и десертом. Включает премиальные напитки.',
+      },
+      {
+        id: 2,
+        name: 'Дополнительный багаж (+20 кг)',
+        price: 3500,
+        description: 'Добавьте к своему тарифу дополнительно 20 кг провоза зарегистрированного багажа. Актуально на весь маршрут.',
+      },
+      {
+        id: 3,
+        name: 'Выбор места у аварийного выхода',
+        price: 1500,
+        description: 'Места с увеличенным пространством для ног (ряд аварийных выходов). Условия: пассажир должен быть старше 18 лет и не иметь ограничений по здоровью.',
+      },
+      {
+        id: 4,
+        name: 'Приоритетная посадка',
+        price: 800,
+        description: 'Право первым пройти на посадку в самолет. Экономит время и позволяет удобно разместить ручную кладь.',
+      },
+      {
+        id: 5,
+        name: 'Страхование полета',
+        price: 1200,
+        description: 'Полис страхования на время перелета. Покрывает задержку рейса, потерю багажа и медицинские расходы в путешествии.',
+      },
+      {
+        id: 6,
+        name: 'Трансфер из/в аэропорт',
+        price: 2200,
+        description: 'Комфортный индивидуальный трансфер на автомобиле бизнес-класса. Встреча с табличкой в зоне прилета.',
+      },
+      {
+        id: 7,
+        name: 'Зал ожидания бизнес-класса',
+        price: 3000,
+        description: 'Доступ в бизнес-зал на 3 часа. Включены питание (шведский стол), напитки, Wi-Fi, рабочие зоны и душ.',
+      },
+      {
+        id: 8,
+        name: 'Wi-Fi на борту',
+        price: 500,
+        description: 'Высокоскоростной интернет на весь период полета. Позволяет работать, общаться в мессенджерах и посещать соцсети.',
+      },
+      {
+        id: 9,
+        name: 'Ускоренное оформление (Fast Track)',
+        price: 1800,
+        description: 'Приоритетное прохождение паспортного и таможенного контроля по отдельной ускоренной линии.',
+      },
+    ],
   isLoading: false,
   error: '',
 };
@@ -32,11 +72,7 @@ const initialState: ServicesState = {
 export const servicesSlice = createSlice({
   name: 'services',
   initialState,
-  reducers: {
-    increment: (state, action: PayloadAction<number>) => {
-
-    },
-  },
+  reducers: {},
 });
 
 export default servicesSlice.reducer;
